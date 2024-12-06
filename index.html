@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <header>
+
+    <div id="stars"></div>
+    <div class="navbar">
+        <img src="right side/logo.png" alt="">
+        <div class="center-nav">
+            <a href="">Home</a>
+            <a href="">MENU</a>
+            <a href="">About</a>
+            <a href="">Shop</a>
+        </div>
+        <div class="social">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+            <a href=""><i class="fa-solid fa-house"></i></a>
+        </div>
+    </div>
+    
+    <div class="text">
+        <h1>THE ULTIMATE <br> BURGER MENU</h1>
+        <p>Burger menus aren’t just food; they’re an experience.
+          Stacked with fresh ingredients and bursting with flavor, 
+          our burgers stand the test of time, just like great design.</p>
+        <a href="" class="btn">Order Now</a>
+        <a href="" class="btn">View more</a>
+    </div>
+
+    <div class="burger">
+        <img src="right side/burger.png" alt="">
+        <img src="right side/pngwing.com (12).png" alt="">
+        <img src="right side/buger2.png" alt="">
+        <img src="right side/Flying Burger PNG Image - 2084x2084.png" alt="">
+        <img src="right side/pngwing.com (16).png" alt="">
+    </div>
+
+    <div class="burger-toggle">
+        <img src="right side/Flying Burger PNG Image - 2084x2084.png" alt="" class="active">
+    </div>
+   </header> 
+   <script>
+    const burgerImages = document.querySelectorAll('.burger img');
+    const toggleImges = document.querySelectorAll('burger-toggle img');
+    let currentIndex = 0;
+
+    toggleImages[currentIndex].classList.add('active');
+
+    burgerImages.forEach((img,index) => {
+        img.addEventListener('click',() => {
+            toggleImges.forEach(toggleImg => toggleImg.classList.remove('active'));
+            toggleImages[currentIndex].classList.add('active');
+            toggleImges[currentIndex].src =burgerImages[index].src;
+            currentIndex = (currentIndex + 1) % toggleImges.length;
+        });
+    });
+
+    
+   </script>
+</body>
+</html>
